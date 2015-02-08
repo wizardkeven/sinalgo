@@ -1,0 +1,22 @@
+--  WALKER  --
+
+  a very simple example
+  a random walk with one walker:
+    there is only one message in the network
+    this message is emitted by a (single) initiator (called InitNode)
+    it is transmitted through the network 
+       the next node is chosen at random uniformly among the neighbors
+       (we call this function randomChoice)
+    ... until it reaches its destination: the EndNode which stops it.
+    
+ Algorithm: (the message is called "the walker")
+
+    1: if InitNode then
+    2:     send the walker to next = randomChoice
+
+	3: forever
+    4:     receive the walker from some node N
+    4:     if EndNode then
+    5:         do nothing! 
+    6:     else
+    7:         send the walker to next = randomChoice 
